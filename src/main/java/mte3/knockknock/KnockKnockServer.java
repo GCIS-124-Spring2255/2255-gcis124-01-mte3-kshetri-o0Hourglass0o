@@ -4,8 +4,11 @@
 package mte3.knockknock;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -15,13 +18,34 @@ public class KnockKnockServer {
 
     public static void receiveAndSend(Scanner scanner,String message,PrintWriter writer,boolean concat) {
         
+        writer 
+
+        System.out.println("Who's there?");
+
+
+
         // 
         // 
         // 
 
     } // receiveAndSend() method closed
     
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, InterruptedException {
+
+        Scanner scan = new Scanner(System.in);
+
+        OutputStream tets = new OutputStream() {
+        };
+
+        Socket socket = new Socket
+
+        PrintWriter writer = new PrintWriter();
+
+        receiveAndSend(scan, "Who's There?", writer, false);
+        
+
+
+        
         
         // 
         // 

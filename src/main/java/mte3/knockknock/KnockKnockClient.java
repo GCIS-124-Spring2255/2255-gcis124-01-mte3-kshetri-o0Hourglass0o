@@ -9,12 +9,16 @@ import java.net.Socket;
 import java.util.Random;
 import java.util.Scanner;
 
+//THE PRANKSTER, the one who tells the joke
+
 public class KnockKnockClient {
     public static int PORT = 54322;
     public static String SERVER = "localhost";
 
     public static void sendAndReceive(PrintWriter writer, String message, Scanner scanner) {
-        
+
+
+
         // 
         // 
         // 
@@ -23,7 +27,25 @@ public class KnockKnockClient {
     
 
     public static void joke(String who,String punchLine) throws IOException {
-        
+
+        System.out.println("Knock, knock");
+
+        System.out.println(who);
+
+        System.out.println(punchLine);
+
+        /*
+        public Client(Socket socket) throws IOException {    super(socket);    }
+
+    @Override
+    public void run() {
+        receive();                // question
+        send("Who's there?");    // answer
+        String setup = receive();   // setup
+        send(setup + " who?");     // response
+        receive();                // punchline
+        close();
+        */
         //  
         // 
         // 
@@ -40,8 +62,18 @@ public class KnockKnockClient {
                             {"Cow says","No, a cow says moooooo!"},
                             {"Otto","Otto know. I forgot."}
                         };
+
         int i = new Random().nextInt(jokes.length);
+
+        Scanner scan = new Scanner(System.in);
+                        
         joke(jokes[i][0],jokes[i][1]);
+
+        Socket socket = new Socket(SERVER, PORT);
+                    
+        PrintWriter writer = new PrintWriter(socket.getOutputStream());
+
+        sendAndReceive(writer, SERVER, scan);                
 
     } // main() method closed
 

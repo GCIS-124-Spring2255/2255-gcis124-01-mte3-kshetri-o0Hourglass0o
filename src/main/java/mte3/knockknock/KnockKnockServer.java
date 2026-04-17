@@ -3,6 +3,7 @@
 
 package mte3.knockknock;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -18,11 +19,25 @@ public class KnockKnockServer {
 
     public static void receiveAndSend(Scanner scanner,String message,PrintWriter writer,boolean concat) {
         
-        writer 
+        Socket socket = new Socket(PORT);
+        BufferedReader in = new BufferedReader(Socket);
+        out
+        
 
         System.out.println("Who's there?");
 
+        out.println(message);
 
+        in
+
+        /*
+        receive();                // question
+        send("Who's there?");    // answer
+        String setup = receive();   // setup
+        send(setup + " who?");     // response
+        receive();                // punchline
+        close();
+        */
 
         // 
         // 
@@ -42,6 +57,7 @@ public class KnockKnockServer {
         PrintWriter writer = new PrintWriter();
 
         receiveAndSend(scan, "Who's There?", writer, false);
+        recieveAndSend(scan, )
         
 
 

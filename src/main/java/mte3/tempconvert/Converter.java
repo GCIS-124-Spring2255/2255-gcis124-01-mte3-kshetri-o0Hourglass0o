@@ -35,11 +35,20 @@ public class Converter {
             double temp = scanner.nextDouble();
             // (part 1) conversion from C to F
             // equation = C * (9/5) + 32
+            // anon
+
+            private static class CelsiusToFahrenheit implements TempConvert {
+                private double CelciusToFahrenheit(){
+                    
+                    public double convert(double temp){return temp * 9/5 + 32;;
+                }
+            }
 
             
             
             // (part 2) conversion from F to C
             // equation = (F-32) * (5/9)
+           
             
             
             // (part 3) conversion from F to K

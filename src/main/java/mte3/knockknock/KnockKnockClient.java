@@ -3,7 +3,9 @@
 
 package mte3.knockknock;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Random;
@@ -15,9 +17,15 @@ public class KnockKnockClient {
     public static int PORT = 54322;
     public static String SERVER = "localhost";
 
-    public static void sendAndReceive(PrintWriter writer, String message, Scanner scanner) {
+    public static void sendAndReceive(PrintWriter writer, String message, Scanner scanner) throws IOException {
 
+        Socket socket1 = new Socket(SERVER, PORT);
+        InputStreamReader reader = new InputStreamReader(socket1.getInputStream());
+        BufferedReader in = new BufferedReader(socket1);
 
+        in.readLine();
+        writer.println(message);
+        
 
         // 
         // 
@@ -73,7 +81,10 @@ public class KnockKnockClient {
                     
         PrintWriter writer = new PrintWriter(socket.getOutputStream());
 
-        sendAndReceive(writer, SERVER, scan);                
+        sendAndReceive(writer, SERVER, scan);    
+        
+        socket.close();
+        scan.close();
 
     } // main() method closed
 
